@@ -1,0 +1,185 @@
+path: []
+inputs:
+  tenants:
+    - evpnMulticast: {}
+      macVrfVniBase: 10000
+      name: DEFAULT
+      vlanAwareBundles: []
+      vlans:
+        - arp: {}
+          dhcpServerDetails: []
+          eTreeDetails: {}
+          eTreeRootSwitches: []
+          eosCli: []
+          evpnMulticast: {}
+          l3OrL2: false
+          mtu: 9214
+          name: ASYM_100
+          nodes: []
+          overrideVariables: {}
+          sviIpAddresses:
+            sviVirtualIpAddress: 10.1.100.1/24
+            virtualAddressConfigType: true
+          switches:
+            - inputs:
+                switch:
+                  hostname: []
+              tags:
+                query: Role:Leaf
+          vlanId: 100
+          vrf: null
+          vxlan: true
+        - arp: {}
+          dhcpServerDetails: []
+          eTreeDetails: {}
+          eTreeRootSwitches: []
+          eosCli: []
+          evpnMulticast: {}
+          l3OrL2: false
+          mtu: 9214
+          name: ASYM_101
+          nodes: []
+          overrideVariables: {}
+          sviIpAddresses:
+            sviVirtualIpAddress: 10.1.101.1/24
+            virtualAddressConfigType: true
+          switches:
+            - inputs:
+                switch:
+                  hostname: []
+              tags:
+                query: Role:Leaf
+          vlanId: 101
+          vrf: null
+          vxlan: true
+      vrfs: []
+    - evpnMulticast: {}
+      macVrfVniBase: 10000
+      name: PROD
+      vlanAwareBundles: []
+      vlans:
+        - arp: {}
+          dhcpServerDetails: []
+          eTreeDetails: {}
+          eTreeRootSwitches: []
+          eosCli: []
+          evpnMulticast: {}
+          l3OrL2: true
+          mtu: 9214
+          name: PROD_102
+          nodes: []
+          overrideVariables: {}
+          sviIpAddresses:
+            sviVirtualIpAddress: 10.1.102.1/24
+            virtualAddressConfigType: true
+          switches:
+            - inputs:
+                switch:
+                  hostname: []
+              tags:
+                query: Role:Leaf
+          vlanId: 102
+          vrf: PROD
+          vxlan: true
+        - arp: {}
+          dhcpServerDetails: []
+          eTreeDetails: {}
+          eTreeRootSwitches: []
+          eosCli: []
+          evpnMulticast: {}
+          l3OrL2: true
+          mtu: 9214
+          name: PROD_103
+          nodes: []
+          overrideVariables: {}
+          sviIpAddresses:
+            sviVirtualIpAddress: 10.1.103.1/24
+            virtualAddressConfigType: true
+          switches:
+            - inputs:
+                switch:
+                  hostname: []
+              tags:
+                query: Role:Leaf
+          vlanId: 103
+          vrf: PROD
+          vxlan: true
+      vrfs:
+        - additionalRouteTargets: []
+          bgp: {}
+          devices: []
+          evpnMulticast: {}
+          externalBgpPeers: []
+          iBgpDetails: {}
+          l3Interfaces: []
+          name: PROD
+          natSourceDetails: {}
+          overrideVariables: {}
+          redistributeStaticRoutes: false
+          staticRoutes: []
+          vni: 50001
+    - evpnMulticast: {}
+      macVrfVniBase: 10000
+      name: DEV
+      vlanAwareBundles: []
+      vlans:
+        - arp: {}
+          dhcpServerDetails: []
+          eTreeDetails: {}
+          eTreeRootSwitches: []
+          eosCli: []
+          evpnMulticast: {}
+          l3OrL2: true
+          mtu: 9214
+          name: DEV_104
+          nodes: []
+          overrideVariables: {}
+          sviIpAddresses:
+            sviVirtualIpAddress: 10.1.104.1/24
+            virtualAddressConfigType: true
+          switches:
+            - inputs:
+                switch:
+                  hostname: []
+              tags:
+                query: Role:Leaf
+          vlanId: 104
+          vrf: DEV
+          vxlan: true
+        - arp: {}
+          dhcpServerDetails: []
+          eTreeDetails: {}
+          eTreeRootSwitches: []
+          eosCli: []
+          evpnMulticast: {}
+          l3OrL2: true
+          mtu: 9214
+          name: DEV_105
+          nodes: []
+          overrideVariables: {}
+          sviIpAddresses:
+            sviVirtualIpAddress: 10.1.105.1/24
+            virtualAddressConfigType: true
+          switches:
+            - inputs:
+                switch:
+                  hostname: []
+              tags:
+                query: Role:Leaf
+          vlanId: 105
+          vrf: DEV
+          vxlan: true
+      vrfs:
+        - additionalRouteTargets: []
+          bgp: {}
+          devices: []
+          evpnMulticast: {}
+          externalBgpPeers: []
+          iBgpDetails: {}
+          l3Interfaces: []
+          name: DEV
+          natSourceDetails: {}
+          overrideVariables: {}
+          redistributeStaticRoutes: false
+          staticRoutes: []
+          vni: 50002

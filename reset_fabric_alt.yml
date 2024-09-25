@@ -1,0 +1,22 @@
+---
+- name: Remove configlet from a device
+  hosts: cvaas
+  gather_facts: false
+#  vars_files:
+#    - "../WERNER_inventory/group_vars/cvaas.yml"
+#    - "cvaas.yml"
+  
+  vars:
+    CVP_DEVICES:
+      - fqdn: WERNER-DC1-LEAF-1A
+        parentContainerName: WERNER_FABRIC
+        configlets:
+            - 'AVD_WERNER-DC1-LEAF-1A'
+
+  tasks:
+    - name: "Configure devices on {{inventory_hostname}}"
+      arista.cvp.cv_device_v3:
+        devices: '{{CVP_DEVICES}}'
+        state: present #provisioning_reset
+        apply_mode: strict
+        search_key: fqdn

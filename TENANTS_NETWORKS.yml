@@ -1,0 +1,67 @@
+svi_profiles:
+  - profile: GENERIC
+    name: GENERIC
+    mtu: 9214
+    enabled: true
+  - profile: GENERIC_FULL
+    name: GENERIC_FULL
+    mtu: 9214
+    enabled: false
+    ip_address_virtual: 172.16.1.254/24
+  - profile: WITH_NO_MTU
+    name: WITH_NO_MTU
+    enabled: false
+  - profile: WITH_SNOOPING
+    name: WITH_SNOOPING
+    enabled: true
+    igmp_snooping_enabled: false
+
+tenants:
+  - name: DEFAULT
+    mac_vrf_vni_base: 10000 
+    l2vlans: 
+      - id: 100
+        name: ASYM_100
+      - id: 101
+        name: ASYM_102        
+
+  - name: PROD
+    mac_vrf_vni_base: 10000 
+    vrfs: 
+      - name: PROD
+        vrf_vni: 50001
+        #vtep_diagnostic: 
+        #  loopback: 10 
+        #  loopback_ip_range: 10.255.10.0/27 
+        svis: 
+          - id: 102
+            name: PROD_102
+            tags: [prodzone]
+            enabled: true
+            ip_address_virtual: 10.1.101.1/24
+          - id: 103
+            name: PROD_10
+            tags: [prodzone]            
+            enabled: true
+            ip_address_virtual: 10.1.102.1/24
+
+  - name: DEV
+    mac_vrf_vni_base: 10000 
+    vrfs: 
+      - name: DEV
+        vrf_vni: 50002
+        #vtep_diagnostic: 
+        #  loopback: 10 
+        #  loopback_ip_range: 10.255.2.0/24
+        svis: 
+          - id: 104
+            name: DEV_104
+            tags: [devzone]
+            enabled: true
+            ip_address_virtual: 10.1.104.1/24
+          - id: 105
+            name: DEV_105
+            tags: [devzone]
+            enabled: true
+            ip_address_virtual: 10.1.105.1/24       
+        

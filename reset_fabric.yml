@@ -1,0 +1,59 @@
+---
+- name: REMOVE CONFIGLET FROM DEVICE
+  hosts: cvaas
+  gather_facts: false
+#  vars_files:
+#    - "../WERNER_inventory/group_vars/cvaas.yml"
+#    - "cvaas.yml"
+  
+  vars:
+    CVP_DEVICES:
+      - fqdn: WERNER-DC1-LEAF-1A
+        parentContainerName: WERNER_FABRIC
+        configlets:
+            - 'MGMNT-DC1-LEAF-1A'
+      - fqdn: WERNER-DC1-LEAF-1B
+        parentContainerName: WERNER_FABRIC
+        configlets:
+            - 'MGMNT-DC1-LEAF-1B'
+      - fqdn: WERNER-DC1-LEAF-2A
+        parentContainerName: WERNER_FABRIC
+        configlets:
+            - 'MGMNT-DC1-LEAF-2A'
+      - fqdn: WERNER-DC1-LEAF-2B
+        parentContainerName: WERNER_FABRIC
+        configlets:
+            - 'MGMNT-DC1-LEAF-2B'
+      - fqdn: WERNER-DC1-LEAF-3A
+        parentContainerName: WERNER_FABRIC
+        configlets:
+            - 'MGMNT-DC1-LEAF-3A'
+      - fqdn: WERNER-DC1-LEAF-3B
+        parentContainerName: WERNER_FABRIC
+        configlets:
+            - 'MGMNT-DC1-LEAF-3B'                                                            
+      - fqdn: WERNER-DC1-SPINE-1
+        parentContainerName: WERNER_FABRIC
+        configlets:
+            - 'MGMNT-DC1-SPINE-1'  
+      - fqdn: WERNER-DC1-SPINE-2
+        parentContainerName: WERNER_FABRIC
+        configlets:
+            - 'MGMNT-DC1-SPINE-2'  
+      - fqdn: WERNER-DC1-SPINE-3
+        parentContainerName: WERNER_FABRIC
+        configlets:
+            - 'MGMNT-DC1-SPINE-3'  
+      - fqdn: WERNER-DC1-SPINE-4
+        parentContainerName: WERNER_FABRIC
+        configlets:
+            - 'MGMNT-DC1-SPINE-4'  
+
+  tasks:
+    - name: "Configure devices on {{inventory_hostname}}"
+      arista.cvp.cv_device_v3:
+        devices: '{{CVP_DEVICES}}'
+        state: provisioning_reset # present
+        apply_mode: strict
+        search_key: fqdn
+

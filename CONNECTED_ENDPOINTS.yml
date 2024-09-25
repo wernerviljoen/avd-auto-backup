@@ -1,0 +1,99 @@
+---
+# Definition of connected endpoints in the fabric.
+servers:
+  # Name of the defined server.
+  - name: HOST-1
+    # Definition of adapters on the server.
+    adapters:
+        # Name of the server interfaces that will be used in the description of each interface
+      - endpoint_ports: [ ether1, ether2 ]
+        # Device ports where the server ports are connected.
+        switch_ports: [ Ethernet6, Ethernet6 ]
+        # Device names where the server ports are connected.
+        switches: [ WERNER-DC1-LEAF-1A, WERNER-DC1-LEAF-1B]
+        # VLANs that will be configured on these ports.
+        vlans: 100-105
+        # Native VLAN to be used on these ports.
+        #native_vlan: 1
+        # L2 mode of the port.
+        mode: trunk
+        # Spanning tree portfast configuration on this port.
+        spanning_tree_portfast: edge
+        # Definition of the pair of ports as port channel.
+        port_channel:
+          # Description of the port channel interface.
+          description: PortChannel HOST-1
+          # Port channel mode for LACP.
+          mode: active
+
+  - name: HOST-4
+    # Definition of adapters on the server.
+    adapters:
+        # Name of the server interfaces that will be used in the description of each interface
+      - endpoint_ports: [ ether1, ether2 ]
+        # Device ports where the server ports are connected.
+        switch_ports: [ Ethernet7, Ethernet7 ]
+        # Device names where the server ports are connected.
+        switches: [ WERNER-DC1-LEAF-1A, WERNER-DC1-LEAF-1B]
+        # VLANs that will be configured on these ports.
+        vlans: 100-105
+        # Native VLAN to be used on these ports.
+        #native_vlan: 1
+        # L2 mode of the port.
+        mode: trunk
+        # Spanning tree portfast configuration on this port.
+        spanning_tree_portfast: edge
+        # Definition of the pair of ports as port channel.
+        port_channel:
+          # Description of the port channel interface.
+          description: PortChannel HOST-1
+          # Port channel mode for LACP.
+          mode: active
+
+  - name: HOST-2
+    # Definition of adapters on the server.
+    adapters:
+        # Name of the server interfaces that will be used in the description of each interface
+      - endpoint_ports: [ ether1, ether2 ]
+        # Device ports where the server ports are connected.
+        switch_ports: [ Ethernet6, Ethernet6 ]
+        # Device names where the server ports are connected.
+        switches: [ WERNER-DC1-LEAF-2A, WERNER-DC1-LEAF-2B]
+        # VLANs that will be configured on these ports.
+        vlans: 100-105
+        # Native VLAN to be used on these ports.
+        #native_vlan: 1
+        # L2 mode of the port.
+        mode: trunk
+        # Spanning tree portfast configuration on this port.
+        spanning_tree_portfast: edge
+        # Definition of the pair of ports as port channel.
+        port_channel:
+          # Description of the port channel interface.
+          description: PortChannel HOST-1
+          # Port channel mode for LACP.
+          mode: active
+
+  - name: HOST-3
+    # Definition of adapters on the server.
+    adapters:
+        # Name of the server interfaces that will be used in the description of each interface
+      - endpoint_ports: [ ether1, ether2 ]
+        # Device ports where the server ports are connected.
+        switch_ports: [ Ethernet6, Ethernet6 ]
+        # Device names where the server ports are connected.
+        switches: [ WERNER-DC1-LEAF-3A, WERNER-DC1-LEAF-3B]
+        # VLANs that will be configured on these ports.
+        vlans: 100-105
+        # Native VLAN to be used on these ports.
+        #native_vlan: 1
+        # L2 mode of the port.
+        mode: trunk
+        # Spanning tree portfast configuration on this port.
+        spanning_tree_portfast: edge
+        # Definition of the pair of ports as port channel.
+        port_channel:
+          # Description of the port channel interface.
+          description: PortChannel HOST-1
+          # Port channel mode for LACP.
+          mode: active

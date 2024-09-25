@@ -1,0 +1,114 @@
+{
+  "dashboards": [
+    {
+      "key": "db0d8ce5-cd4d-4bf4-b27a-2cbcddef37d7",
+      "createdAt": [
+        930036441,
+        1606
+      ],
+      "createdBy": "wv",
+      "metaData": {
+        "schemaVersion": "3",
+        "legacyKey": "",
+        "legacyVersion": "",
+        "fromPackage": ""
+      },
+      "name": "Deployment Documentation",
+      "description": "Documentation on Fabric deployment",
+      "widgets": [
+        {
+          "id": "9fc65a6b-0eea-41c3-af7f-ad52ad31c4a6",
+          "name": "",
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "dimensions": {
+            "width": 24,
+            "height": 19
+          },
+          "type": "topology-widget",
+          "inputs": {},
+          "location": "main",
+          "parent": ""
+        },
+        {
+          "id": "f7128321-914b-4b72-b1c5-e484108cdb5f",
+          "name": "",
+          "position": {
+            "x": 0,
+            "y": 38
+          },
+          "dimensions": {
+            "width": 24,
+            "height": 78
+          },
+          "type": "security-exposure-widget",
+          "inputs": {
+            "complianceView": "ALL_COMPLIANCE_COUNTS",
+            "selectedCustomTags": [],
+            "tags": ""
+          },
+          "location": "main",
+          "parent": ""
+        },
+        {
+          "id": "45d8b8b6-71d1-4a05-a529-087e4d5eec1a",
+          "name": "Documentation",
+          "position": {
+            "x": 0,
+            "y": 19
+          },
+          "dimensions": {
+            "width": 24,
+            "height": 19
+          },
+          "type": "tabs-widget",
+          "inputs": {},
+          "location": "main",
+          "parent": ""
+        },
+        {
+          "id": "8aa3e295-429b-4a2a-b29b-e01f4619437b",
+          "name": "Post Deployment Tests",
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "dimensions": {
+            "width": 24,
+            "height": 19
+          },
+          "type": "text-widget",
+          "inputs": {
+            "textContent": "# Validate State Report\nANTA Tests not run yet",
+            "verticalAlignment": 0
+          },
+          "location": "main",
+          "parent": "45d8b8b6-71d1-4a05-a529-087e4d5eec1a"
+        },
+        {
+          "id": "6951471d-1417-4840-8112-ec36652052b7",
+          "name": "Fabric Addressing",
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "dimensions": {
+            "width": 24,
+            "height": 19
+          },
+          "type": "text-widget",
+          "inputs": {
+            "textContent": "# FABRIC Documentation\n\nAVD Build Not done yet",
+            "verticalAlignment": 0
+          },
+          "location": "main",
+          "parent": "45d8b8b6-71d1-4a05-a529-087e4d5eec1a"
+        }
+      ],
+      "lastUpdated": 1725360625531,
+      "lastUpdatedBy": "wv"
+    }
+  ]
+}
