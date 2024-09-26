@@ -24,12 +24,16 @@ This is the heart of the project. It is simply a Python script that asks the fol
 - What is the customer’s name?
 - How many data centers have they got?
 
+<<<<<<< HEAD
 It then iterates through the last two questions based on the answer of the question "How many data centers have they got?":
+=======
+It then iterates through the last two questions based on the answer of the question "How many DCs have they got?":
+>>>>>>> d1ffa4d (update)
 - How many SPINES are in CUSTOMER_DC#?
 - How many LEAF-PAIRS are in CUSTOMER_DC#?
 - What is the Management IP Pool in CIDR format in DC#?
 
-Based on the input it generates all the files required for # of DCs for CUSTOMER one folder up from the script directory. This includes:
+Based on the input it generates all the files required for <NUMBER> of DCs for <CUSTOMER>. This includes:
 ```
 <CUSTOMER> -- a New directory for the customer name.
 ├── <CUSTOMER>_inventory -- The directory for all inventory files.
