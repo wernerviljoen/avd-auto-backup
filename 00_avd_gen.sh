@@ -25,11 +25,11 @@ set timeout -1
 
 spawn python3 00_avd_gen.py
 
-expect "What is the customer name? " {
+expect "What is the customer’s name?" {
     send "$customer_name\r"
 }
 
-expect "How many DC’s have they got? " { 
+expect "How many data center’s have they got?" { 
     send "$number_of_dcs\r" 
 }
 EOF
@@ -42,9 +42,9 @@ for (( dc=1; dc<=$number_of_dcs; dc++ )); do
     ip_pool=$(echo "$inputs" | grep "ip_pool_dc${dc}" | cut -d'=' -f2)
 
     expect_script+="
-    expect \"How many SPINES for ${customer_name}_DC${dc}? \" { send \"$spines\r\" }
-    expect \"How many LEAF pairs for ${customer_name}_DC${dc}? \" { send \"$leafs\r\" }
-    expect \"Enter the Management IP Pool in the format IP_address/Subnet_mask: \" { send \"$ip_pool\r\" }
+    expect \"How many SPINES are in ${customer_name}_DC${dc}? \" { send \"$spines\r\" }
+    expect \"How many LEAF-PAIRS are in ${customer_name}_DC${dc}? \" { send \"$leafs\r\" }
+    expect \"What is the Management IP Pool in CIDR format for DC${dc} \" { send \"$ip_pool\r\" }
     "
 done
 
@@ -77,7 +77,7 @@ cd avd-auto-backup
 # Start the Python script
 spawn python3 avd-dashboard-set.py --server www.cv-staging.corp.arista.io --token-file avd-cvaas_token
 
-expect "What is the customer name? " {
+expect "What is the customer’s name?" {
     send "$customer_name\r"
 }
 
