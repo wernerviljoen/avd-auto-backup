@@ -1,0 +1,14 @@
+#!/usr/bin/expect -f
+
+set timeout -1
+cd ..
+cd avd-auto-backup
+
+# Start the Python script
+spawn python3 avd-dashboard-set.py --server www.cv-staging.corp.arista.io --token-file avd-cvaas_token
+
+expect "What is the customer’s name?" {
+    send "WERNER\r"
+}
+
+expect eof

@@ -1,0 +1,20 @@
+#!/usr/bin/expect -f
+
+set timeout -1
+
+spawn python3 00_avd_gen.py
+
+expect "What is the customer’s name? " {
+    send "WERNER\r"
+}
+
+expect "How many data center’s have they got? " { 
+    send "1\r" 
+}
+    expect "How many SPINES are in WERNER_DC1? " { send "4\r" }
+    expect "How many LEAF-PAIRS are in WERNER_DC1? " { send "3\r" }
+    expect "What is the Management IP Pool in CIDR format for DC1? " { send "192.168.1.0/24\r" }
+    
+puts "Script execution completed"
+expect eof
+

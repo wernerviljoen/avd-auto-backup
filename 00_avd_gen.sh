@@ -25,11 +25,11 @@ set timeout -1
 
 spawn python3 00_avd_gen.py
 
-expect "What is the customer’s name?" {
+expect "What is the customer’s name? " {
     send "$customer_name\r"
 }
 
-expect "How many data center’s have they got?" { 
+expect "How many data center’s have they got? " { 
     send "$number_of_dcs\r" 
 }
 EOF
@@ -44,7 +44,7 @@ for (( dc=1; dc<=$number_of_dcs; dc++ )); do
     expect_script+="
     expect \"How many SPINES are in ${customer_name}_DC${dc}? \" { send \"$spines\r\" }
     expect \"How many LEAF-PAIRS are in ${customer_name}_DC${dc}? \" { send \"$leafs\r\" }
-    expect \"What is the Management IP Pool in CIDR format for DC${dc} \" { send \"$ip_pool\r\" }
+    expect \"What is the Management IP Pool in CIDR format for DC${dc}? \" { send \"$ip_pool\r\" }
     "
 done
 

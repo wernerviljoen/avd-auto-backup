@@ -22,7 +22,7 @@ def get_numeric_input(prompt):
 def get_ip_pool():
     while True:
         try:
-            ip_pool = ipaddress.IPv4Network(input(f"What is the Management IP Pool in CIDR format for DC_{dc_number}?"), strict=False)
+            ip_pool = ipaddress.IPv4Network(input(f"What is the Management IP Pool in CIDR format for DC{dc_number}? "), strict=False)
             return ip_pool
         except ValueError:
             print("Please enter a valid IP address and subnet.")
@@ -65,14 +65,14 @@ def create_customer_directory(cust_name):
         print(f"Error creating directories: {e}")
 
 # Prompt for customer name
-cust_name = input("What is the customer’s name?")
+cust_name = input("What is the customer’s name? ")
 
 if __name__ == "__main__":
     # Call the function to create directories
     create_customer_directory(cust_name)
 
     # Prompt for the number of DCs
-    dc_number = get_numeric_input("How many data center’s have they got?")
+    dc_number = get_numeric_input("How many data center’s have they got? ")
 
     # Initialize the inventory data structure
     inventory_data = {
@@ -226,8 +226,8 @@ for dc_count in range(1, dc_number + 1):
 #    initial_topo_data['CVP_CONTAINERS_INIT']['STAGING']['configlets'].append(f'{cust_name}-INFRA-STAGING')    
 
     # Prompt for SPINES and LEAF Pairs
-    spines_count = get_numeric_input(f"How many SPINES are in {dc_name}?")
-    leaf_pairs_count = get_numeric_input(f"How many LEAF-PAIRS are in {dc_name}?")
+    spines_count = get_numeric_input(f"How many SPINES are in {dc_name}? ")
+    leaf_pairs_count = get_numeric_input(f"How many LEAF-PAIRS are in {dc_name}? ")
 
     # Prompt for Management IP Pool
     management_ip_pool = get_ip_pool()
