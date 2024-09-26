@@ -24,11 +24,7 @@ This is the heart of the project. It is simply a Python script that asks the fol
 - What is the customer’s name?
 - How many data centers have they got?
 
-<<<<<<< HEAD
-It then iterates through the last two questions based on the answer of the question "How many data centers have they got?":
-=======
-It then iterates through the last two questions based on the answer of the question "How many DCs have they got?":
->>>>>>> d1ffa4d (update)
+It then iterates through the last two questions based on the answer to the question "How many data centers have they got?":
 - How many SPINES are in CUSTOMER_DC#?
 - How many LEAF-PAIRS are in CUSTOMER_DC#?
 - What is the Management IP Pool in CIDR format in DC#?
